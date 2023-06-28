@@ -1,0 +1,931 @@
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+}
+:root{
+    --primarycolor: #96BB7C;
+    --pinkbg: #FFF2F3;
+    --headercolor: #252B42;
+    --textcolor: #737373;
+    --whiteclor: #FFFFFF;
+    --secondarycolor: #E74040;
+    --star: rgb(250, 250, 36);
+    --old: #BDBDBD;
+    --new: #FFAB71;
+    --mailborder: #E6E6E6;
+    --mailbg: #F9F9F9;
+    --footerbg: #FAFAFA;
+}
+.swap{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+label i{
+    color: var(--textcolor);
+    font-size: 20px;
+}
+#checking{
+    display: none;
+}
+label{
+    display: none;
+}
+.topic h1::before{
+    content: " ";
+    width: 100px;
+    height: 5px;
+    background-color: var(--secondarycolor);
+    display: block;
+    margin-bottom: 30px;
+}
+.subject h2::after{
+    content: " ";
+    width: 50px;
+    height: 2px;
+    background-color: var(--secondarycolor);
+    display: inline-block;
+    margin-top: 20px;
+}
+.background{
+    background-color: var(--pinkbg);
+    margin: 0;
+}
+.maincontainer{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+li a:hover{
+    color: var(--primarycolor);
+}
+a i:hover{
+    color: var(--secondarycolor);
+}
+.learn:hover{
+    color: var(--secondarycolor) !important;
+}
+.header{
+    display: flex;
+    margin: 0;
+    align-items: center;
+    padding: 25px 0;
+}
+.header .logo{
+    color: var(--headercolor);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+.header ul{
+    list-style: none;
+    margin: 0;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+}
+.header a{
+    color: var(--textcolor);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+}
+.dropdown-menu{
+    display: none;
+}
+.downarrow{
+    position: relative;
+}
+.downarrow::after{
+    content: '\e5cf';
+    font-family: 'Material Symbols Outlined';
+    font-size: 15px;
+    color: var(--textcolor);
+    position: absolute;
+}
+.header ul li:hover .dropdown-menu{
+    display: flex;
+    position: absolute;
+    transition: all 400ms;
+    top: 100%;
+    background-color: var(--whiteclor);
+    width: 120px;
+    border: none;
+    border-radius: 5px;
+}
+.header ul li:hover .dropdown-menu ul{
+    flex-direction: column;
+    margin: 20px 0;
+    gap: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+.dropdown-menu ul li a{
+    color: var(--secondarycolor);
+}
+.dropdown-menu ul li a:hover{
+    color: var(--whiteclor);
+    background-color: var(--secondarycolor);
+    padding: 10px;
+    border-radius: 25px;
+}
+.arrow::after{
+    content: "\e5c8";
+    font-family: 'Material Symbols Outlined';
+    font-size: 16px;
+    color: var(--whiteclor);
+    display: block;
+}
+.header .button{
+    flex: 1;
+    text-align: center;
+    margin: 0;
+}
+.unfilled{
+    font-size: 14px;
+    padding: 10px 20px;
+    font-weight: 400;
+    border: transparent;
+    background-color: transparent;
+    color: var(--primarycolor);
+}
+.filled{
+    font-size: 14px;
+    padding: 10px 20px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: transparent;
+    background-color: var(--primarycolor);
+    color: var(--whiteclor);
+}
+.header .filled{
+    margin-left: 20px;
+}
+.filled .arrow{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.filled i span{
+    font-size: 16px;
+}
+.banner{
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    gap: 30px;
+    margin-bottom: 7rem;
+}
+.content h4{
+    color: var(--primarycolor);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    margin: 0;
+}
+.content h1{
+    color: var(--headercolor);
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 80px;
+    margin: 0;
+}
+.content p{
+    color: var(--textcolor);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 0;
+    max-width: 400px;
+}
+.bannerpic img{
+    width: 100%;
+}
+.subject h2::after{
+    width: 50px;
+    height: 2px;
+    color: var(--secondarycolor);
+    display: block;
+}
+.content .filled{
+    padding: 15px 40px;
+}
+.borderonly{
+    border: var(--primarycolor) solid;
+    background-color: transparent;
+    color: var(--primarycolor);
+    border-width: 0.2mm;
+    border-radius: 5px;
+    padding: 15px 40px;
+}
+.icon{
+    background-color: var(--secondarycolor);
+    border-radius: 50%;
+    color: var(--whiteclor);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: -95px 0 50px 0;
+    gap: 30px;
+}
+.card .column{
+    background-color: var(--whiteclor);
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+}
+.subject{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px 60px 35px 40px;
+    gap: 20px;
+}
+.subject h2{
+    margin: 0;
+    color: var(--headercolor);
+    font-size: 24px;
+    text-align: left;
+    font-weight: 700;
+}
+.subject p{
+    margin: 0;
+    color: var(--textcolor);
+    max-width: 200px;
+    text-align: left;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+}
+.analysis .card{
+    margin: 0;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.data h1{
+    margin: 0;
+    text-align: center;
+    color: var(--primarycolor);
+    font-weight: 700;
+    font-size: 58px;
+}
+.data p{
+    margin: 0;
+    text-align: center;
+    color: var(--headercolor);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.topic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.topic .line{
+    width: 100px;
+    height: 5px;
+}
+.topic h1{
+    margin: 0;
+    color: var(--headercolor);
+    font-weight: 700;
+    font-size: 40px;
+}
+.topic p{
+    margin: 0;
+    color: var(--textcolor);
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    max-width: 300px;
+}
+.topic a{
+    display:flex;
+    color: var(--primarycolor);
+    font-weight: 700;
+    font-size: 14px;
+    gap: 5px;
+    text-decoration: none;
+    width: 100px;
+}
+.learn::after{
+    content: "\f105";
+    font-family: "Font Awesome 6 Pro";
+    font-size: 16px;
+    display: block;
+    color: var(--primarycolor);
+}
+.student img{
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+.advice{
+    padding: 100px 0;
+}
+.advice .card{
+    margin: 0;
+    gap: 20px;
+    width: 100%;
+}
+.displays{
+    background-color: var(--whiteclor);
+}
+.displays label{
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: var(--secondarycolor);
+    color: var(--whiteclor);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .displays .image{
+    position: relative;
+  }
+  .image img{
+    width: 100%;
+  }
+  .displays .icons{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    bottom: 20px;
+  }
+  .carddetail{
+    padding: 15px 30px;
+}
+  .cardhead{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  } 
+.displays h5{
+    margin: 0;
+    color: var(--primarycolor);
+    font-weight: 700;
+    font-size: 14px;
+    flex: 1;
+}
+.columns .rating{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--headercolor);
+    color: var(--whiteclor);
+    padding: 3px 8px;
+    border-radius: 15px;
+    font-size: 14px;
+  }
+  .rating::before{
+    content: "\e838";
+    font-family: 'Material Symbols Outlined';
+    display: block;
+    font-size: 16px;
+    color: var(--star);
+    margin-bottom: 5px;
+  }
+  .cardhead i span{
+    font-size: 16px;
+    color: var(--star);
+  }
+.displays h2{
+    margin: 0;
+    margin-bottom: 15px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--headercolor);
+}
+.displays .review{
+    margin: 0;
+    margin-bottom: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--textcolor);
+    max-width: 250px;
+}
+.downsales{
+    margin: 0;
+    margin-bottom: 20px;
+    display: flex;
+    color: var(--textcolor);
+    align-items: center;
+    font-weight: 800;
+    font-size: 14px;
+}
+.downsales::before{
+    content: "\f090";
+    font-family: 'Material Symbols Outlined';
+    color: var(--textcolor);
+    font-size: 20px;
+    display: block;
+}
+.displays .price{
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 15px 5px 10px 0;
+  color: var(--old);
+  font-weight: 700;
+  font-size: 16px;
+}
+.displays .newprice{
+    color: var(--new);
+}
+.icons button{
+    font-size: 22px;
+    border-radius: 50%;
+    padding: 8px 8px 5px 8px;
+    border: transparent;
+    background-color: var(--whiteclor);
+   }
+.displays .borderonly{
+    display: flex;
+    align-items: center;
+    padding: 5px 16px;
+    border-radius: 30px;
+}
+.displays .borderonly::after{
+    content: "\e5e1";
+    font-family: 'Material Symbols Outlined';
+    font-size: 16px;
+    display: block;
+    color: var(--primarycolor);
+}
+.content h5{
+    color: var(--primarycolor);
+  font-weight: 700;
+  font-size: 14px;
+}
+.basic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+.basic h5{
+    margin: 0;
+    color: var(--primarycolor);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+}
+.basic h1{
+    margin: 0;
+    color: var(--headercolor);
+    font-weight: 700;
+    font-size: 40px;
+}
+.basic p{
+    margin: 0;
+    color: var(--textcolor);
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    max-width: 355px;
+}
+.card .reviews{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.person{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.reviews::before{
+    content: "\e838" "\e838" "\e838" "\e838" "\e839";
+    font-family: 'Material Symbols Outlined';
+    display: block;
+    font-size: 22px;
+    color: var(--star);
+    margin-bottom: 5px;
+}
+.reviews p{
+    margin: 0;
+    line-height: 20px;
+    width: 140px;
+    color: var(--textcolor);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.intro{
+    text-align: left;
+    padding-left: 5px;
+}
+.intro p{
+    margin: 0;
+    color: var(--headercolor);
+}
+.name{
+    color: var(--primarycolor) !important;
+}
+.carded{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.carded .eachone{
+    border-radius: 20px;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+}
+.canvas .profile{
+    border-start-end-radius: 20px;
+    border-start-start-radius: 20px;
+    width: 100%;
+  }
+  .canvas .details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 30px;
+  }
+  .canvas h5{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--headercolor);
+  }
+  .canvas p{
+    margin: 0;
+    color: var(--textcolor);
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .media{
+    display: flex;
+    gap: 20px;
+  }
+  .media i{
+    color: var(--primarycolor);
+    font-size: 24px;
+  }
+  .ratingstars{
+    display: flex;
+    gap: 5px;
+    color: var(--star);
+    margin-bottom: 10px;
+  }
+  .signin .basic{
+    align-items: center;
+  }
+.signin p{
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 400px;
+}
+.username{
+    display: grid;
+    grid-template-columns: auto 120px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+.username .email{
+    padding: 0 15px;
+    height: 35px;
+    background-color: var(--mailbg);
+    border: 1px solid var(--mailborder);
+    border-end-start-radius: 5px;
+    border-start-start-radius: 5px;
+  }
+  .username .filled{
+    border-end-start-radius: 0;
+    border-start-start-radius: 0;
+  }
+  .firstfooter{
+    margin-bottom: 50px;
+  }
+.firstfooter .card{
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    margin: 0;
+}
+.firstfooter .column{
+    box-shadow: none;
+}
+.contact h5{
+    color: var(--headercolor);
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+.contact ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact a{
+    text-decoration: none;
+    color: var(--textcolor);
+    font-size: 14px;
+    font-weight: 600;
+}
+.lastcolumn .contact{
+    max-width: 300px !important;
+}
+.contact .phone::before{
+    content: "\e0b0";
+    font-family: 'Material Symbols Outlined';
+    font-size: 24px;
+    color: var(--primarycolor);
+    display: block;
+}
+.contact .phone{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.contact .location::before{
+    content: "\e0c8";
+    font-family: 'Material Symbols Outlined';
+    font-size: 24px;
+    color: var(--primarycolor);
+    display: block;
+}
+.contact .location{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.contact .mailaddress::before{
+    content: "\e158";
+    font-family: 'Material Symbols Outlined';
+    font-size: 24px;
+    color: var(--primarycolor);
+    display: block;
+}
+.contact .mailaddress{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.address i{
+    color: var(--primarycolor);
+}
+.backgroundfooter{
+    background-color: var(--footerbg);
+}
+.lastfooter footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.lastfooter .media{
+    display: flex;
+    gap: 20px;
+}
+.lastfooter i{
+    font-size: 24px;
+    color: var(--primarycolor);
+}
+.copyrights span{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--textcolor);
+}
+@media screen and (max-width: 800px) {
+    .header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background-color: var(--whiteclor);
+        padding: unset;
+        height: 50px;
+        padding: 5px 20px;
+    }
+    .dropdown-menu ul{
+       top: 170px;
+    }
+    .header ul li:hover .dropdown-menu ul li{
+        margin: 10px;
+    }
+    .header ul li:hover .dropdown-menu ul{
+        padding: 0;
+        position: unset;
+        width: 100%;
+        background-color: var(--whiteclor);
+    }
+    .header ul li:hover .dropdown-menu{
+        position: unset;
+        width: 100% !important;
+    }
+    .menu ul:hover .dropdown-menu ul{
+        display: flex;
+        left: 50%;
+        width: 150px;
+        margin: 0 !important;
+        gap: 5px !important;
+    }
+    #checking:checked~ul{
+        left: 0%;
+    }
+    .dropdown-menu ul li a:hover{
+        color: var(--whiteclor);
+        background-color: var(--secondarycolor);
+        padding: 5px;
+        margin: 0;
+    }
+    .swap{
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+    .menu ul{
+        position: fixed;
+        background-color: var(--footerbg);
+        color: var(--headercolor);
+        display: block;
+        left: 100%;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        transition: all 400ms;
+    }
+    .menu ul li {
+        margin: 20px 0;
+    }
+    .menu ul li a{
+        font-size: 20px;
+    }
+    .menu ul li:hover .drop-down{
+        display: block;
+    }
+    #checking:checked~ul{
+        top: 50px;
+        left: 0%;
+        padding: 0;
+        height: calc(100vh - 50px);
+    }
+    #checking:checked~label i{
+        content: "\e5c9";
+        font-size: 20px;
+        color: var(--textcolor);
+        font-family: 'Material Symbols Outlined'; 
+        display: block;
+    }
+    label{
+        display: block;
+        width: 50px;
+    }
+    .banner{
+        flex-direction: column;
+    }
+    .content{
+        max-width: none;
+    }
+    .content h5{
+        font-size: 14px;
+    }
+    .content h1{
+        font-size: 50px;
+        max-width: none;
+    }
+    .content p{
+        max-width: none;
+        font-size: 18px;
+    }
+    .background .bannerpic{
+        display: none;
+    }
+    .data h1{
+        font-size: 55px;
+    }
+    .data p{
+        font-size: 14px;
+    }
+    .topic h1{
+        font-size: 35px;
+    }
+    .topic p{
+        max-width: none;
+    }
+    .basic h5{
+        font-size: 14px;
+    }
+    .basic h1{
+        font-size: 35px;
+    }
+    .basic p{
+        max-width: none;
+    }
+    .card{
+        grid-template-columns: 100%;
+    }
+    .carded{
+        grid-template-columns: 1fr 1fr;
+    }
+    .analysis .card{
+        grid-template-columns: 1fr 1fr;
+    }
+    .firstfooter .card{
+        grid-template-columns: 100%;
+    }
+    .lastfooter footer{
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .lastfooter .media{
+        gap: 15px;
+    }
+    .lastfooter .media i{
+        font-size: 25px;
+    }
+    .username{
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 500px) {
+    .header .logo{
+        font-size: 22px;
+    }
+    .header .filled{
+        padding: 5px 10px;
+        margin: 0;
+    }
+    .header .unfilled{
+        padding: 5px 10px;
+    }
+    .arrow::after{
+        display: none;
+    }
+    .content .filled{
+        padding: 10px 20px;
+    }
+    .content .borderonly{
+        padding: 10px 20px;
+    }
+    .content h5{
+        font-size: 12px;
+    }
+    .content h1{
+        font-size: 45px;
+    }
+    .content p{
+        font-size: 16px;
+    }
+    .topic h1{
+        font-size: 30px;
+    }
+    .topic p{
+        font-size: 14px;
+    }
+    .data h1{
+        font-size: 50px;
+    }
+    .carded{
+        grid-template-columns: 100%;
+    }
+    .basic h5{
+        font-size: 12px;
+    }
+    .basic h1{
+        font-size: 30px;
+    }
+    .basic p{
+        font-size: 14px;
+    }
+    .username{
+        grid-template-columns: none;
+        gap: 10px;
+    }
+    .username .email{
+        border-radius: 0;
+    }
+    .username .filled{
+        border-radius: 0;
+    }
+    .analysis .card{
+        grid-template-columns: 100%;
+    }
+}
